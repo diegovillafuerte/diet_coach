@@ -1,0 +1,20 @@
+/* MealCard.css */
+
+.meal-card {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .card-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-number {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .info-text {
+    color: #6c757d;  /* Bootstrap's secondary color for greyed out text */
+  }
+  
