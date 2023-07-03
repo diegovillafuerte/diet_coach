@@ -110,6 +110,7 @@ const ProgressTracker = () => {
         <Row className="my-3">
           <Col xs={12} lg={8} className="mx-lg-3">
           <FormControl 
+            id='meal_description_input'
             className="mb-2 mb-lg-0" 
             type="text" 
             value={mealDescription} 
@@ -122,7 +123,7 @@ const ProgressTracker = () => {
             }}
             placeholder="Meal Description"/>
 <div className="d-flex justify-content-center mt-2">
-    <button onClick={handleMealSearch} type="button" className="align-items-center btn btn-warning me-2">
+    <button id='meal_description_button' onClick={handleMealSearch} type="button" className="align-items-center btn btn-warning me-2">
         {isLoading ? <Spinner animation="border" size="sm" /> : "Submit"}
     </button>
 </div>        

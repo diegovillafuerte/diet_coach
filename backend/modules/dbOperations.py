@@ -80,8 +80,6 @@ def add_meals(meal):
         session.add(new_meal)
         session.commit()
 
-
-
 def delete_meals(meal_id):
     """
     Deletes the meal with the specified ID from the database.
@@ -182,21 +180,21 @@ def get_meals_and_totals_last_Ndays(user_email, time_period):
             - 'totals': A dictionary of the total nutritional values for all meals for the specified date and user.
             - 'meals': A list of dictionaries representing the meals for the specified user on the specified date.
     """
-    meals_and_totals = []
+    meals_and_totals = {}
 
-    for i in range(time_period-1, -1, -1): 
-        day = date.today() - timedelta(days=i)
+    for i in range(time_period): 
+        day = date.today() - timedelta(days=time_period-1-i)
         day_string = day.isoformat()
 
         daily_totals = get_daily_total(user_email, day)
-        meals = list_of_days_meals(user_email, day)
-
-        meals_and_totals.append((day_string, {
-            'totals': daily_totals,
-            'meals': meals
-        }))
-
+        if daily_totals['calories']:
+            meals = list_of_days_meals(user_email, day)
+            meals_and_totals[day_string] = {
+                'totals': daily_totals,
+                'meals': meals
+            }
     return meals_and_totals
+
 
 
 class User(Base):

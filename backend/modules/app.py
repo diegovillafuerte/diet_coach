@@ -6,11 +6,10 @@ from flask import Flask, request, render_template, redirect, session, g, flash, 
 from .prompts import get_nutritional_info
 from .dbOperations import add_meals, get_daily_total, list_of_days_meals, delete_meals, add_user, DBSession, User, Meal, get_user, get_meals_and_totals_last_Ndays
 from flask_cors import CORS
-
 from functools import wraps
 
 
-app = Flask(__name__)
+app = Flask(__name__)   
 app.secret_key = os.getenv("SECRET_KEY")
 
 CORS(app, supports_credentials=True)

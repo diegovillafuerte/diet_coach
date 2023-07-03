@@ -34,9 +34,9 @@ const LoginForm = () => {
     <div>
       {loginMessage && <div className="error">{loginMessage}</div>}
       <form onSubmit={handleSubmit}>
-        <Input value={email} onChange={e => setEmail(e.target.value)} placeholder="e-mail" type='email' required/>
-        <Input value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" type="password" required/>
-        <Button type="submit">Login</Button>
+        <Input id='login_email'value={email} onChange={e => setEmail(e.target.value)} placeholder="e-mail" type='email' required/>
+        <Input id='login_password' value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" type="password" required/>
+        <Button id='login_submit' type="submit">Login</Button>
       </form>
     </div>
   );

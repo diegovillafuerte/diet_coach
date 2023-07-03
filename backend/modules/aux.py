@@ -57,3 +57,58 @@ def get_nutinfo(prompt,functions, model="gpt-3.5-turbo-0613", temperature=0):
     else:
         empty_answer = json.loads('{"explanation": "None", "calories": "0", "carbohydrates": 0, "protein": 0, "fat": 0, "sodium": 0}')
         return empty_answer
+    
+
+
+[
+  {
+    "2023-06-14": {
+      "totals": {
+        "calories": 305,
+        "carbohydrates": 79,
+        "protein": 3,
+        "fat": 1,
+        "sodium": 4
+      },
+      "meals": [
+        {
+          "id": 3,
+          "meal": "two bananas and an apple",
+          "calories": 305,
+          "carbohydrates": 79,
+          "protein": 3,
+          "fat": 1,
+          "sodium": 4,
+          "date": "2023-06-14T13:51:19",
+          "user_email": "diego.villafuerte.soraiz@gmail.com",
+          "explanation": "To estimate the nutritional values for the"
+        }
+      ]
+    }
+  },
+    {
+    "2023-06-15": {
+      "totals": {
+        "calories": 305,
+        "carbohydrates": 79,
+        "protein": 3,
+        "fat": 1,
+        "sodium": 4
+      },
+      "meals": [
+        {
+          "id": 3,
+          "meal": "two bananas and an apple",
+          "calories": 305,
+          "carbohydrates": 79,
+          "protein": 3,
+          "fat": 1,
+          "sodium": 4,
+          "date": "2023-06-14T13:51:19",
+          "user_email": "diego.villafuerte.soraiz@gmail.com",
+          "explanation": "To estimate the nutritional values for the"
+        }
+      ]
+    }
+  }
+]
