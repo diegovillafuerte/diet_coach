@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Inherited from API
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+getting-started/*
+
 # C extensions
 *.so
 
