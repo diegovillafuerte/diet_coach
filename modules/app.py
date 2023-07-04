@@ -8,7 +8,7 @@ from flask_cors import CORS
 from functools import wraps
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='/build')
 app.secret_key = os.getenv("SECRET_KEY")
 
 CORS(app, supports_credentials=True)
