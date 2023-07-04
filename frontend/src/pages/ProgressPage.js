@@ -28,7 +28,7 @@ const ProgressTracker = () => {
     const token = localStorage.getItem('token');
 
     // Call the API with the meal description and token to get nutritional information
-    const response = await axios.post('http://127.0.0.1:5000/api/v1/meals/nutritional-info', { description: mealDescription }, {
+    const response = await axios.post('/api/v1/meals/nutritional-info', { description: mealDescription }, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -49,7 +49,7 @@ const ProgressTracker = () => {
     try {
       const token = localStorage.getItem('token');
       // Call the API to log the meal
-      await axios.post('http://127.0.0.1:5000/api/v1/meals/save', { mealInfo }, {
+      await axios.post('/api/v1/meals/save', { mealInfo }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -66,7 +66,7 @@ const ProgressTracker = () => {
   const fetchTodayMeals = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://127.0.0.1:5000/api/v1/meals/today', {
+      const response = await axios.get('/api/v1/meals/today', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -80,15 +80,12 @@ const ProgressTracker = () => {
   const fetchMealHistory = async () => {
     try {
       const token = localStorage.getItem('token');
-      console.log("A la funcion si entro")
-      const response = await axios.get('http://127.0.0.1:5000/api/v1/meals/history', {
+      const response = await axios.get('/api/v1/meals/history', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       setMealHistory(response.data);
-      console.log("aqui andooo")
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
