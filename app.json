@@ -1,0 +1,13 @@
+{
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs",
+        "path": "frontend"
+      },
+      {
+        "url": "heroku/python",
+        "path": "backend"
+      }
+    ]
+  }
+  
