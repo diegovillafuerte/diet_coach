@@ -2,15 +2,24 @@ import os
 import sys
 import jwt
 from datetime import date, timedelta, datetime
-from flask import Flask, request, render_template, redirect, session, g, flash, jsonify
+from flask import Flask, request, render_template, redirect, session, g, flash, jsonify, send_from_directory
 from .prompts import get_nutritional_info
 from .dbOperations import add_meals, get_daily_total, list_of_days_meals, delete_meals, add_user, DBSession, User, Meal, get_user, get_meals_and_totals_last_Ndays
 from flask_cors import CORS
 from functools import wraps
 
 
-app = Flask(__name__)   
+app = Flask(__name__, static_folder='../frontend/build')
 app.secret_key = os.getenv("SECRET_KEY")
+
+# Serve React App
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 CORS(app, supports_credentials=True)
 
