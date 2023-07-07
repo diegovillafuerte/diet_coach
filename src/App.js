@@ -26,7 +26,7 @@ const App = () => {
               <ProgressPage />
             </PrivateRoute>
           } />          
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/progress" />} />
         </Routes>
       </Router>
     </AuthProvider>
