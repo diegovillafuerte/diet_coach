@@ -193,7 +193,11 @@ def get_meals_and_totals_last_Ndays(user_email, time_period):
                 'totals': daily_totals,
                 'meals': meals
             }
-    return meals_and_totals
+        
+        # Reverse the order of the dictionary
+        reversed_meals_and_totals = {key: meals_and_totals[key] for key in reversed(meals_and_totals.keys())}
+
+    return reversed_meals_and_totals
 
 
 
