@@ -8,7 +8,7 @@ if api_key is None:
     sys.exit("Error: OPENAI_API_KEY environment variable not set.")
  
 
-def get_nutritional_info(meal_description, model="gpt-4-0613"):
+def get_nutritional_info(meal_description, model="gpt-3.5-turbo-0613"):
 
     try:
         response = openai.ChatCompletion.create(
